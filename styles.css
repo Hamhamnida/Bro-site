@@ -1,0 +1,160 @@
+/* === General Body Styling === */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+    margin: 0;
+    padding: 0;
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* === Container === */
+.container {
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2c2c2c;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+/* === Input Field === */
+input {
+    width: 100%;
+    max-width: 430px;
+    padding: 20px 15px;
+    margin-bottom: 20px;
+    border: 2px solid #444;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #007acc;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 122, 204, 0.5);
+    transform: scale(1.02);
+}
+
+input::placeholder {
+    color: #666;
+    font-size: 18px;
+}
+
+/* === Keypad Layout === */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+    max-width: 430px;
+}
+
+/* === Buttons === */
+button {
+    width: 100%;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 10px;
+    border: 2px solid #444;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    background-color: #333;
+    color: #e0e0e0;
+    text-align: center;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 122, 204, 0.5);
+}
+
+button:hover {
+    background-color: #444;
+}
+
+/* === Greeting Header === */
+.greeting-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* === Typewriter Animation === */
+.typewriter {
+    font-family: 'Courier New', monospace;
+    color: #007acc;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #007acc;
+    width: 0;
+    animation: typing 5s steps(25) infinite alternate, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+    0% { width: 0; }
+    50% { width: 22ch; }
+    100% { width: 0; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* === Tiny Shield === */
+.tiny-shield {
+    position: relative;
+    width: 20px;
+    height: 30px;
+    background-color: #007acc;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: pulse 1s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* === Responsive Design === */
+@media screen and (max-width: 740px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    input {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .typewriter {
+        font-size: 12px;
+    }
+
+    .tiny-shield {
+        width: 14px;
+        height: 21px;
+    }
+
+    button {
+        padding: 16px;
+        font-size: 20px;
+    }
+}
